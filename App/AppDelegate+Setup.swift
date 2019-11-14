@@ -8,6 +8,7 @@
 import Foundation
 import Moya
 import Swinject
+import RealmSwift
 
 extension AppDelegate {
     /**
@@ -16,6 +17,17 @@ extension AppDelegate {
     internal func setupDependencies() {
         // MARK: - Providers
 
-  
+        container.register(Realm.Configuration.self) { _ in
+            Realm.Configuration()
+            
+            //FOR Unit Test
+            // var config = Realm.Configuration()
+            //config.inMemoryIdentifier = "Test"
+        }
+        
+        container.register(Realm.self) { resolver in
+            try! Realm(configuration: resolver.resolve(Realm.Configuration.self)!)
+        }
+        
     }
 }
