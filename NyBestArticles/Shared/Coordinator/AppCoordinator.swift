@@ -8,7 +8,6 @@
 import Swinject
 import UIKit
 
-
 final class AppCoordinator: BaseCoordinator {
     // MARK: - Properties
 

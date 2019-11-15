@@ -6,7 +6,6 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-
 import Moya
 import Swinject
 
@@ -36,7 +35,7 @@ final class HomeCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     // MARK: - Private methods
 
     private func showArticlesListViewController() {
-        let viewController = container.resolveViewController(ArticlesListViewController.self)
+        let viewController = container.resolveViewController(ArticlesListVC.self)
         navigationController.pushViewController(viewController, animated: true)
     }
 }
