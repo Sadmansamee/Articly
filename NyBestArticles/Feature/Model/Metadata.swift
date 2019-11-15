@@ -1,6 +1,8 @@
 import Foundation
-struct Metadata: Decodable {
-    let url: String = ""
+import RealmSwift
+
+class Metadata: Decodable {
+    var url: String = ""
 
     enum CodingKeys: String, CodingKey {
         case url

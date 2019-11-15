@@ -46,34 +46,59 @@ final class ArticlesListViewModel {
     }
 
     private func loadMostViewedArticles() {
-        let today = Date()
-
-        guard let localItems = realm.objects(Article.self).sorted(byKeyPath: Article.CodingKeys.publishedDate.rawValue, ascending: true).array else {
+        guard let localItems = realm.objects(Article.self).sorted(byKeyPath: Article.CodingKeys.createdAt.rawValue, ascending: true).array else {
             fetchMostViewedArticles()
             return
         }
 
         mostViewedArticleViewModels.accept(localItems)
 
-        if let firstArticle = localItems.first {
-            if firstArticle.publishedDate < today {
+        let today = Date()
+        if let firstArticle = localItems.first, let difference = firstArticle.createdAt.totalDistance(from: today, resultIn: .hour) {
+            // Fetch from server in 12 hour intarvel
+            if difference > 12 {
                 fetchMostViewedArticles()
             }
         }
     }
 
     private func fetchMostViewedArticles() {
-        articlesListProvider.request(.mostViewedArticles, completion: { _ in
+        isLoading.accept(true)
+
+        articlesListProvider.request(.mostViewedArticles, completion: { result in
+
+            self.isLoading.accept(false)
+
+            if case let .success(response) = result {
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    do {
+                        let items = try JSONDecoder().decode([Article].self, from: filteredResponse.data, keyPath: "results")
+                        let data = self.mostViewedArticleViewModels.value + items
+                        self.mostViewedArticleViewModels.accept(data)
+
+                        try? self.realm.write {
+                            self.realm.add(items, update: .all)
+                        }
+
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+
+                } catch {
+                    self.alertMessage.onNext(AlertMessage(title: error.localizedDescription, message: ""))
+                }
+            } else {
+                self.alertMessage.onNext(AlertMessage(title: result.error?.errorDescription, message: ""))
+            }
 
         })
     }
 
     private func clearOldData() {
-        let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())
-
-        // realm.objects(Article.self).
-//        .lowerThan("publishedDate", thirtyDaysAgo)
-//        .findAll()
-//        .deleteAllFromRealm()
+        if let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date()) {
+            let itemsToDelete = realm.objects(Article.self).filter("\(Article.CodingKeys.createdAt.rawValue) < \(thirtyDaysAgo)")
+            realm.delete(itemsToDelete)
+        }
     }
 }

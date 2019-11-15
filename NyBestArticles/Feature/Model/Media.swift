@@ -1,8 +1,9 @@
 import Foundation
+import RealmSwift
 
 class Media: Decodable {
-    let caption: String?
-    let metadata: [Metadata]?
+    var caption: String = ""
+    var metadata: [Metadata] = [Metadata]()
 
     enum CodingKeys: String, CodingKey {
         case caption

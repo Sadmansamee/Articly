@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A3F0D88237D84D2000D8733 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D87237D84D2000D8733 /* HomeCoordinator.swift */; };
-		1A3F0D8A237D852C000D8733 /* ArticlesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D89237D852C000D8733 /* ArticlesListViewController.swift */; };
-		1A3F0D8C237D8549000D8733 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3F0D8B237D8549000D8733 /* Home.storyboard */; };
+		1A3F0D8A237D852C000D8733 /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D89237D852C000D8733 /* ArticlesListVC.swift */; };
 		1A3F0D8E237D85B2000D8733 /* ArticlesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D8D237D85B2000D8733 /* ArticlesListService.swift */; };
 		1A3F0D90237D85DA000D8733 /* articleList.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A3F0D8F237D85DA000D8733 /* articleList.json */; };
 		1A3F0D92237D8609000D8733 /* MockJsonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D91237D8609000D8733 /* MockJsonFile.swift */; };
@@ -22,6 +21,11 @@
 		1A3F0DA6237DDDAD000D8733 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0DA5237DDDAD000D8733 /* Extension+Date.swift */; };
 		1A3F0DA8237DDDD3000D8733 /* K+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0DA7237DDDD3000D8733 /* K+Enum.swift */; };
 		1A3F0DAA237DE2F1000D8733 /* Extension+RX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0DA9237DE2F1000D8733 /* Extension+RX.swift */; };
+		1A3F0DAD237F0B3A000D8733 /* ArticleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0DAB237F0B3A000D8733 /* ArticleListTableViewCell.swift */; };
+		1A3F0DAE237F0B3A000D8733 /* ArticleListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3F0DAC237F0B3A000D8733 /* ArticleListTableViewCell.xib */; };
+		1A3F0DB0237F13FC000D8733 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3F0DAF237F13FC000D8733 /* Home.storyboard */; };
+		1A3F0DB2237F1F15000D8733 /* ThrowableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0DB1237F1F15000D8733 /* ThrowableDecodable.swift */; };
+		1A3F0DB4237F215D000D8733 /* NestedDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0DB3237F215D000D8733 /* NestedDecodable.swift */; };
 		1A89B39A23559D2C0001C7E5 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89B39923559D2C0001C7E5 /* Extension+View.swift */; };
 		1ADC851D234C58650019AC62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC851C234C58650019AC62 /* AppDelegate.swift */; };
 		1ADC8526234C58670019AC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ADC8525234C58670019AC62 /* Assets.xcassets */; };
@@ -53,8 +57,7 @@
 
 /* Begin PBXFileReference section */
 		1A3F0D87237D84D2000D8733 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		1A3F0D89237D852C000D8733 /* ArticlesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewController.swift; sourceTree = "<group>"; };
-		1A3F0D8B237D8549000D8733 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		1A3F0D89237D852C000D8733 /* ArticlesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListVC.swift; sourceTree = "<group>"; };
 		1A3F0D8D237D85B2000D8733 /* ArticlesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListService.swift; sourceTree = "<group>"; };
 		1A3F0D8F237D85DA000D8733 /* articleList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = articleList.json; sourceTree = "<group>"; };
 		1A3F0D91237D8609000D8733 /* MockJsonFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJsonFile.swift; sourceTree = "<group>"; };
@@ -67,6 +70,11 @@
 		1A3F0DA5237DDDAD000D8733 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		1A3F0DA7237DDDD3000D8733 /* K+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "K+Enum.swift"; sourceTree = "<group>"; };
 		1A3F0DA9237DE2F1000D8733 /* Extension+RX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+RX.swift"; sourceTree = "<group>"; };
+		1A3F0DAB237F0B3A000D8733 /* ArticleListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableViewCell.swift; sourceTree = "<group>"; };
+		1A3F0DAC237F0B3A000D8733 /* ArticleListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListTableViewCell.xib; sourceTree = "<group>"; };
+		1A3F0DAF237F13FC000D8733 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		1A3F0DB1237F1F15000D8733 /* ThrowableDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowableDecodable.swift; sourceTree = "<group>"; };
+		1A3F0DB3237F215D000D8733 /* NestedDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedDecodable.swift; sourceTree = "<group>"; };
 		1A89B39923559D2C0001C7E5 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		1A89B3A12355B9200001C7E5 /* NyBestArticlesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NyBestArticlesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A89B3A52355B9200001C7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,8 +166,10 @@
 		1A3F0D85237D8439000D8733 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1A3F0D89237D852C000D8733 /* ArticlesListViewController.swift */,
-				1A3F0D8B237D8549000D8733 /* Home.storyboard */,
+				1A3F0D89237D852C000D8733 /* ArticlesListVC.swift */,
+				1A3F0DAB237F0B3A000D8733 /* ArticleListTableViewCell.swift */,
+				1A3F0DAC237F0B3A000D8733 /* ArticleListTableViewCell.xib */,
+				1A3F0DAF237F13FC000D8733 /* Home.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				1ADC8570234DC5CD0019AC62 /* AlertMessage.swift */,
+				1A3F0DB1237F1F15000D8733 /* ThrowableDecodable.swift */,
+				1A3F0DB3237F215D000D8733 /* NestedDecodable.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -394,8 +406,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A3F0DAE237F0B3A000D8733 /* ArticleListTableViewCell.xib in Resources */,
+				1A3F0DB0237F13FC000D8733 /* Home.storyboard in Resources */,
 				1A3F0D90237D85DA000D8733 /* articleList.json in Resources */,
-				1A3F0D8C237D8549000D8733 /* Home.storyboard in Resources */,
 				1ADC8529234C58670019AC62 /* LaunchScreen.storyboard in Resources */,
 				1ADC8526234C58670019AC62 /* Assets.xcassets in Resources */,
 			);
@@ -499,12 +512,15 @@
 				1A3F0D9E237DCA87000D8733 /* Media.swift in Sources */,
 				1ADC8563234D9DDE0019AC62 /* Extension+Swinject.swift in Sources */,
 				1ADC857F234DCF730019AC62 /* Extension+Json.swift in Sources */,
-				1A3F0D8A237D852C000D8733 /* ArticlesListViewController.swift in Sources */,
+				1A3F0D8A237D852C000D8733 /* ArticlesListVC.swift in Sources */,
 				1A3F0D9F237DCA87000D8733 /* Article.swift in Sources */,
 				1A3F0D94237D8807000D8733 /* ArticlesListViewModel.swift in Sources */,
 				1ADC8553234D9A2D0019AC62 /* Coordinator.swift in Sources */,
 				1A3F0DA2237DD493000D8733 /* ArticleViewModel.swift in Sources */,
+				1A3F0DAD237F0B3A000D8733 /* ArticleListTableViewCell.swift in Sources */,
 				1A3F0DA0237DCA87000D8733 /* Metadata.swift in Sources */,
+				1A3F0DB2237F1F15000D8733 /* ThrowableDecodable.swift in Sources */,
+				1A3F0DB4237F215D000D8733 /* NestedDecodable.swift in Sources */,
 				1ADC8557234D9C150019AC62 /* BaseCoordinator.swift in Sources */,
 				1A3F0DA8237DDDD3000D8733 /* K+Enum.swift in Sources */,
 				1A89B39A23559D2C0001C7E5 /* Extension+View.swift in Sources */,

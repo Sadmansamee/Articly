@@ -8,6 +8,7 @@ class Article: Object, Decodable {
     @objc dynamic var title: String = ""
     @objc dynamic var abstract: String = ""
     @objc dynamic var publishedDate: Date = Date()
+    @objc dynamic var createdAt: Date = Date()
     @objc dynamic var source: String = ""
     @objc dynamic var id: Int = 0
     @objc dynamic var views: Int = 0
@@ -25,6 +26,7 @@ class Article: Object, Decodable {
         case title
         case abstract
         case publishedDate = "published_date"
+        case createdAt
         case source
         case id
         case views
@@ -66,11 +68,11 @@ class Article: Object, Decodable {
         let id = try values.decode(Int.self, forKey: .id)
         let views = try values.decode(Int.self, forKey: .views)
 
-        let media = try values.decodeIfPresent([Media].self, forKey: .media)
+        let media = try values.decode([Media].self, forKey: .media)
+
         var largeImage: String = ""
         var smallImage: String = ""
-
-        if let firstMedia = media?.first, let firstMeta = firstMedia.metadata?.first, let lastMeta = firstMedia.metadata?.last {
+        if let firstMedia = media.first, let firstMeta = firstMedia.metadata.first, let lastMeta = firstMedia.metadata.last {
             smallImage = firstMeta.url
             largeImage = lastMeta.url
         }

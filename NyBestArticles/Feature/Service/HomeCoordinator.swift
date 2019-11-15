@@ -35,7 +35,7 @@ final class HomeCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     // MARK: - Private methods
 
     private func showArticlesListViewController() {
-        let viewController = container.resolveViewController(ArticlesListViewController.self)
+        let viewController = container.resolveViewController(ArticlesListVC.self)
         navigationController.pushViewController(viewController, animated: true)
     }
 }

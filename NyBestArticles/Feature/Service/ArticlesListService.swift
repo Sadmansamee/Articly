@@ -34,7 +34,7 @@ extension ArticlesListService: TargetType {
     public var task: Task {
         switch self {
         case .mostViewedArticles:
-            return .requestParameters(parameters: ["api-key": Constant.ApiKey.nyApiKey], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["api-key": Constant.ApiKey.nyApiKey], encoding: URLEncoding.queryString)
         }
     }
 

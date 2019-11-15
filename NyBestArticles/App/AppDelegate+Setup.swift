@@ -23,11 +23,11 @@ extension AppDelegate {
             // FOR Unit Test
             // var config = Realm.Configuration()
             // config.inMemoryIdentifier = "Test"
-        }
+        }.inObjectScope(ObjectScope.container)
 
         container.register(Realm.self) { resolver in
             try! Realm(configuration: resolver.resolve(Realm.Configuration.self)!)
-        }
+        }.inObjectScope(ObjectScope.container)
 
         // MARK: - Providers
 
@@ -43,7 +43,7 @@ extension AppDelegate {
 
         // MARK: - View Controllers
 
-        container.storyboardInitCompleted(ArticlesListViewController.self) { resolver, controller in
+        container.storyboardInitCompleted(ArticlesListVC.self) { resolver, controller in
             controller.articlesListViewModel = resolver.resolve(ArticlesListViewModel.self)
         }
     }
