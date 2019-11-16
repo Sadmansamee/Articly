@@ -41,7 +41,7 @@ final class ArticlesListViewModel {
         mostViewedArticleViewModels.asObservable()
     }
 
-    private func updateRechablity(rechable: Bool) {
+    func updateRechablity(rechable: Bool) {
         isRechable.accept(rechable)
     }
 

@@ -16,7 +16,6 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable {
     private var disposeBag = DisposeBag()
 
     private var reachability: Reachability?
-    private var isRechable: Bool = false
 
     @IBOutlet var tableView: UITableView!
     var loadingView: UIActivityIndicatorView!
@@ -24,6 +23,7 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "My Articles"
         initLoadingView()
         viewModelCallbacks()
         setUpTableView()
@@ -38,8 +38,10 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable {
         reachability = try? Reachability()
 
         reachability?.whenReachable = { _ in
+            self.articlesListViewModel.updateRechablity(rechable: true)
         }
         reachability?.whenUnreachable = { _ in
+            self.articlesListViewModel.updateRechablity(rechable: false)
         }
     }
 
@@ -124,6 +126,7 @@ extension ArticlesListVC {
                     if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
                         self.tableView?.deselectRow(at: selectedRowIndexPath, animated: true)
                         // TODO: - NAVIGATE TO DETAIL
+                        
                     }
                 }
             )
@@ -147,6 +150,6 @@ extension ArticlesListVC {
 
 extension ArticlesListVC: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        40
+        200
     }
 }
