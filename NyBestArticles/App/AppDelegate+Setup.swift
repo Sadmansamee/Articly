@@ -19,10 +19,6 @@ extension AppDelegate {
 
         container.register(Realm.Configuration.self) { _ in
             Realm.Configuration()
-
-            // FOR Unit Test
-            // var config = Realm.Configuration()
-            // config.inMemoryIdentifier = "Test"
         }.inObjectScope(ObjectScope.container)
 
         container.register(Realm.self) { resolver in
