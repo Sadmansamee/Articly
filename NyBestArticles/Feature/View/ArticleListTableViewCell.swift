@@ -6,10 +6,15 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class ArticleListTableViewCell: UITableViewCell {
     @IBOutlet var labelTitle: UILabel!
+    @IBOutlet var labelSubtitle: UILabel!
+    @IBOutlet var labelDate: UILabel!
+    @IBOutlet var imgView: UIImageView!
+
     var articleViewModel: ArticleViewModel? {
         didSet {
             bindViewModel()
@@ -28,8 +33,13 @@ class ArticleListTableViewCell: UITableViewCell {
     }
 
     private func bindViewModel() {
-        if let vm = articleViewModel {
-            labelTitle.text = vm.titleVM
+        if let viewModel = articleViewModel {
+            labelTitle.text = viewModel.titleVM
+            labelSubtitle.text = viewModel.abstractVM
+            labelDate.text = viewModel.publishedDateVM
+
+            imgView.kf.indicatorType = .activity
+            imgView.kf.setImage(with: URL(string: viewModel.smallImageVM), placeholder: #imageLiteral(resourceName: "placeholder"))
         }
     }
 }
