@@ -22,7 +22,7 @@ final class HomeCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     // MARK: - Coordinator
 
     override func start() {
-        showArticlesListViewController()
+        showArticlesListVC()
     }
 
     // MARK: - Init
@@ -34,8 +34,17 @@ final class HomeCoordinator: BaseCoordinator, CoordinatorFinishOutput {
 
     // MARK: - Private methods
 
-    private func showArticlesListViewController() {
+    private func showArticlesListVC() {
         let viewController = container.resolveViewController(ArticlesListVC.self)
+        viewController.onArticleSelected = { viewModel in
+            self.showArticleDetailVC(viewModel: viewModel)
+        }
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    private func showArticleDetailVC(viewModel: ArticleViewModel) {
+        let viewController = container.resolveViewController(ArticleDetailVC.self)
+        viewController.articleViewModel = viewModel // ArticleDetailViewModel(viewmodel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
 }
