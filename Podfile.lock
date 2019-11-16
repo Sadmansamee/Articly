@@ -1,9 +1,8 @@
 PODS:
-  - Alamofire (4.9.0)
-  - Differentiator (4.0.1)
-  - Kingfisher (5.8.2):
-    - Kingfisher/Core (= 5.8.2)
-  - Kingfisher/Core (5.8.2)
+  - Alamofire (4.9.1)
+  - Kingfisher (5.9.0):
+    - Kingfisher/Core (= 5.9.0)
+  - Kingfisher/Core (5.9.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -18,18 +17,14 @@ PODS:
   - RealmSwift (4.0.0):
     - Realm (= 4.0.0)
   - Result (4.1.0)
-  - RxBlocking (5.0.0):
+  - RxBlocking (5.0.1):
     - RxSwift (~> 5)
-  - RxCocoa (5.0.0):
+  - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxDataSources (4.0.1):
-    - Differentiator (~> 4.0)
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
-  - RxRelay (5.0.0):
+  - RxRelay (5.0.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
+  - RxSwift (5.0.1)
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
@@ -43,36 +38,31 @@ DEPENDENCIES:
   - RealmSwift
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
-  - RxDataSources (~> 4.0)
   - RxSwift (~> 5)
   - Swinject (~> 2.7.1)
   - SwinjectStoryboard (~> 2.2.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Alamofire
-    - Differentiator
     - Kingfisher
     - Moya
     - Nimble
     - Quick
+    - ReachabilitySwift
+    - Realm
+    - RealmSwift
     - Result
     - RxBlocking
     - RxCocoa
-    - RxDataSources
     - RxRelay
     - RxSwift
     - Swinject
     - SwinjectStoryboard
-  trunk:
-    - ReachabilitySwift
-    - Realm
-    - RealmSwift
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  Kingfisher: 3adc15096595f5aed800bb0d5cb757fc58b2d2dd
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
@@ -80,14 +70,13 @@ SPEC CHECKSUMS:
   Realm: 0c5b8f398daeec5b29824e41c453ff9e126e31d8
   RealmSwift: 02e1f604f7091ec535145055764ca53efa8cdc92
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 5c269a28f40593406ea7cfade943497c6f6f7a66
+PODFILE CHECKSUM: d10a3d8e2e1919e5d24b20afd6fe5119ac7d6ee2
 
 COCOAPODS: 1.8.4
