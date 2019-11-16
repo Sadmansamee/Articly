@@ -10,4 +10,7 @@ import Foundation
 
 enum MockJson: String {
     case articleList
+    case article
+    case media
+    case metadata
 }

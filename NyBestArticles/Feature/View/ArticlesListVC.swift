@@ -126,7 +126,6 @@ extension ArticlesListVC {
                     if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
                         self.tableView?.deselectRow(at: selectedRowIndexPath, animated: true)
                         // TODO: - NAVIGATE TO DETAIL
-                        
                     }
                 }
             )

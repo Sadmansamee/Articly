@@ -1,0 +1,29 @@
+
+    {
+      "type": "image",
+      "subtype": "photo",
+      "caption": "Mary Cain’s male coaches were convinced she had to get “thinner, and thinner, and thinner.”",
+      "copyright": "The New York Times",
+      "approved_for_syndication": 1,
+      "media-metadata": [
+        {
+          "url": "https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-mediumThreeByTwo440.jpg",
+          "format": "mediumThreeByTwo440",
+          "height": 293,
+          "width": 440
+        }
+      ]
+    }
+  

@@ -1,0 +1,66 @@
+
+{
+  "url": "https://www.nytimes.com/2019/11/07/opinion/nike-running-mary-cain.html",
+  "adx_keywords": "Cain, Mary (1996- );NIKE Inc;Women and Girls;Weight;Running;Track and Field;Salazar, Alberto;Doping (Sports);Coaches and Managers;#MeToo Movement;Oregon;your-feed-opinionvideo",
+  "column": null,
+  "section": "Opinion",
+  "byline": "By MARY CAIN",
+  "type": "Article",
+  "title": "I Was the Fastest Girl in America, Until I Joined Nike",
+  "abstract": "Mary Cain’s male coaches were convinced she had to get “thinner, and thinner, and thinner.” Then her body started breaking down.",
+  "published_date": "2019-11-07",
+  "source": "The New York Times",
+  "id": 100000006790443,
+  "asset_id": 100000006790443,
+  "views": 1,
+  "des_facet": [
+    "WOMEN AND GIRLS",
+    "RUNNING",
+    "TRACK AND FIELD",
+    "DOPING (SPORTS)",
+    "COACHES AND MANAGERS",
+    "#METOO MOVEMENT",
+    "YOUR-FEED-OPINIONVIDEO"
+  ],
+  "org_facet": [
+    "NIKE INC",
+    "WEIGHT"
+  ],
+  "per_facet": [
+    "CAIN, MARY (1996- )",
+    "SALAZAR, ALBERTO"
+  ],
+  "geo_facet": [
+    "OREGON"
+  ],
+  "media": [
+    {
+      "type": "image",
+      "subtype": "photo",
+      "caption": "Mary Cain’s male coaches were convinced she had to get “thinner, and thinner, and thinner.”",
+      "copyright": "The New York Times",
+      "approved_for_syndication": 1,
+      "media-metadata": [
+        {
+          "url": "https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210
+        },
+        {
+          "url": "https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-mediumThreeByTwo440.jpg",
+          "format": "mediumThreeByTwo440",
+          "height": 293,
+          "width": 440
+        }
+      ]
+    }
+  ],
+  "uri": "nyt://article/08fe6653-b47f-549a-a484-c76219d10244"
+}
