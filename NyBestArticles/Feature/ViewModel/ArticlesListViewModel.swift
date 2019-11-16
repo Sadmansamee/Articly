@@ -73,7 +73,10 @@ final class ArticlesListViewModel {
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     do {
-                        let items = try JSONDecoder().decode([Article].self, from: filteredResponse.data, keyPath: "results")
+                        // let items = try JSONDecoder().decode([Article].self, from: filteredResponse.data, keyPath: "results")
+                        let throwables = try JSONDecoder().decode([Throwable<Article>].self, from: filteredResponse.data, keyPath: "results")
+                        let items = throwables.compactMap { try? $0.result.get() }
+
                         let data = self.mostViewedArticleViewModels.value + items
                         self.mostViewedArticleViewModels.accept(data)
 

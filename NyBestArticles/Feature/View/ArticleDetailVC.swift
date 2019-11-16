@@ -6,41 +6,49 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-import UIKit
+import Kingfisher
 import RxSwift
+import UIKit
 
-class ArticleDetailVC: UITableViewController,HomeStoryboardLoadable {
-    
-    var articleDetailViewModel : ArticleDetailViewModel!
+class ArticleDetailVC: UITableViewController, HomeStoryboardLoadable {
+    // MARK: - Properties
+
     private var disposeBag = DisposeBag()
-    private var articleViewModel : ArticleViewModel!{
-        didSet{
-            
-        }
-    }
+    var articleViewModel: ArticleViewModel?
+
+    // MARK: - UI Properties
+
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var labelTitle: UILabel!
+    @IBOutlet var labelByLine: UILabel!
+    @IBOutlet var labelPublishDate: UILabel!
+    @IBOutlet var labelAbstract: UILabel!
+    @IBOutlet var buttonReadFullStory: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModelCallbacks()
-        
-    }
-}
-
-// MARK: - View Model
-
-extension ArticleDetailVC {
-    private func viewModelCallbacks() {
-        
-        articleDetailViewModel.onArticleViewModel
-            .map { [weak self] result in
-                
-                guard let self = self else {
-                    return
-                }
-                
-                self.articleViewModel = result
-        }.subscribe()
-            .disposed(by: disposeBag)
+        setUI()
+        setUIProperties()
     }
     
+    private func setUI(){
+    }
+
+    private func setUIProperties() {
+        if let viewModel = articleViewModel {
+            imageView.kf.indicatorType = .activity
+            imageView.kf.setImage(with: URL(string: viewModel.largeImageVM), placeholder: #imageLiteral(resourceName: "placeholder"))
+            labelTitle.text = viewModel.titleVM
+            labelAbstract.text = viewModel.abstractVM
+            labelByLine.text = viewModel.bylineVM
+            labelPublishDate.text = "Published on " + viewModel.publishedDateVM
+        }
+    }
+
+    // MARK: - Actions
+
+    @IBAction func actionReadFullStory(_: Any) {
+        guard let viewmodel = articleViewModel, let url = URL(string: viewmodel.urlVM) else { return }
+        UIApplication.shared.open(url)
+    }
 }

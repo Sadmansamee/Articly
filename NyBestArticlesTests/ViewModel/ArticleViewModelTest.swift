@@ -18,9 +18,7 @@ import RxSwift
 class ArticleViewModelTest: QuickSpec {
     override func spec() {
         describe("ArticleViewModelTest") {
-            
             var sut: ArticleViewModel!
-            
             afterEach {
                 sut = nil
             }
@@ -29,8 +27,6 @@ class ArticleViewModelTest: QuickSpec {
                 let url = URL(fileURLWithPath: path!)
                 sut = try! JSONDecoder().decode(Article.self, from: Data(contentsOf: url))
             }
-            
-            
             context("Model From Json") {
                 
                 it("Data is valid") {

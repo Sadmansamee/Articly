@@ -11,15 +11,13 @@ import RxRelay
 import RxSwift
 import UIKit
 
-
 protocol ArticlesListVCProtocol: AnyObject {
     var onArticleSelected: ((ArticleViewModel) -> Void)? { get set }
 }
 
-class ArticlesListVC: UIViewController, HomeStoryboardLoadable,ArticlesListVCProtocol {
-    
+class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCProtocol {
     var onArticleSelected: ((ArticleViewModel) -> Void)?
-    
+
     var articlesListViewModel: ArticlesListViewModel!
     private var disposeBag = DisposeBag()
 

@@ -41,14 +41,24 @@ extension ViewControllerTest {
            // MARK: - View Model
 
            container.register(ArticlesListViewModel.self, factory: { resolver in
-               ArticlesListViewModel(articlesListProvider: resolver.resolve(MoyaProvider<ArticlesListService>.self)!, realm: resolver.resolve(Realm.self)!)
+                ArticlesListViewModel(articlesListProvider: resolver.resolve(MoyaProvider<ArticlesListService>.self)!, realm: resolver.resolve(Realm.self)!)
            })
+        
+            container.register(ArticleViewModel.self, factory: { resolver in
+                let path = Bundle.main.path(forResource: MockJson.article.rawValue, ofType: "json")
+                let url = URL(fileURLWithPath: path!)
+                let article = try! JSONDecoder().decode(Article.self, from: Data(contentsOf: url))
+                return article
+            })
 
            // MARK: - View Controllers
-
            container.storyboardInitCompleted(ArticlesListVC.self) { resolver, controller in
                controller.articlesListViewModel = resolver.resolve(ArticlesListViewModel.self)
            }
+        
+            container.storyboardInitCompleted(ArticleDetailVC.self) { resolver, controller in
+                controller.articleViewModel = resolver.resolve(ArticleViewModel.self)
+            }
         return container
     }
 }
