@@ -46,5 +46,9 @@ extension AppDelegate {
         container.storyboardInitCompleted(ArticlesListVC.self) { resolver, controller in
             controller.articlesListViewModel = resolver.resolve(ArticlesListViewModel.self)
         }
+        
+        container.storyboardInitCompleted(ArticleDetailVC.self) { _, _ in
+            
+        }
     }
 }

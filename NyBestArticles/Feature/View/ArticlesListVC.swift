@@ -11,7 +11,15 @@ import RxRelay
 import RxSwift
 import UIKit
 
-class ArticlesListVC: UIViewController, HomeStoryboardLoadable {
+
+protocol ArticlesListVCProtocol: AnyObject {
+    var onArticleSelected: ((ArticleViewModel) -> Void)? { get set }
+}
+
+class ArticlesListVC: UIViewController, HomeStoryboardLoadable,ArticlesListVCProtocol {
+    
+    var onArticleSelected: ((ArticleViewModel) -> Void)?
+    
     var articlesListViewModel: ArticlesListViewModel!
     private var disposeBag = DisposeBag()
 
@@ -119,14 +127,13 @@ extension ArticlesListVC {
         tableView.rx
             .modelSelected(ArticleViewModel.self)
             .subscribe(
-                onNext: { [weak self] _ in
+                onNext: { [weak self] item in
                     guard let self = self else {
                         return
                     }
                     if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
                         self.tableView?.deselectRow(at: selectedRowIndexPath, animated: true)
-                        // TODO: - NAVIGATE TO DETAIL
-                        
+                        self.onArticleSelected?(item)
                     }
                 }
             )
