@@ -15,9 +15,9 @@ import RxSwift
 final class ArticlesListViewModel {
     private var articlesListProvider: MoyaProvider<ArticlesListService>
     private var realm: Realm
-    
-    private var fetchableDays : KEnum.FetchableDays = .one
-    private var fetchStatus : KEnum.FetchStatus = .none
+
+    private var fetchableDays: KEnum.FetchableDays = .one
+    private var fetchStatus: KEnum.FetchStatus = .none
 
     private let isLoading = BehaviorRelay(value: false)
     private let alertMessage = PublishSubject<AlertMessage>()
@@ -46,18 +46,18 @@ final class ArticlesListViewModel {
     var onMostViwedArticleViewModels: Observable<[Article]> {
         mostViewedArticleViewModels.asObservable()
     }
-    
+
     func updateRechablity(rechable: Bool) {
         isRechable.accept(rechable)
-        //as connectivity is positive now so this will enable to retry if previous attempt to fetch data was not successfull due to internet connectivity with 
-        if(isRechable.value && fetchStatus == .willFetch){
+        // as connectivity is positive now so this will enable to retry if previous attempt to fetch data was not successfull due to internet connectivity with
+        if isRechable.value, fetchStatus == .willFetch {
             fetchMostViewedArticles(days: fetchableDays)
         }
     }
 
     private func loadMostViewedArticles() {
         guard let localItems = realm.objects(Article.self).sorted(byKeyPath: Article.CodingKeys.createdAt.rawValue, ascending: false).array else {
-            //if there was no data before it will load last seven days's data
+            // if there was no data before it will load last seven days's data
             fetchableDays = KEnum.FetchableDays.seven
             fetchStatus = .willFetch
             fetchMostViewedArticles(days: fetchableDays)
@@ -70,7 +70,7 @@ final class ArticlesListViewModel {
         if let firstArticle = localItems.first, let difference = firstArticle.createdAt.totalDistance(from: today, resultIn: .minute) {
             // Fetch from server in 6 hour interval
             if difference >= 1 {
-                //if there was no data before it will load last one day's data
+                // if there was no data before it will load last one day's data
                 fetchableDays = KEnum.FetchableDays.one
                 fetchStatus = .willFetch
                 fetchMostViewedArticles(days: fetchableDays)
@@ -79,11 +79,10 @@ final class ArticlesListViewModel {
     }
 
     private func fetchMostViewedArticles(days: KEnum.FetchableDays) {
-        
-        if(fetchStatus != .willFetch){
+        if fetchStatus != .willFetch {
             return
         }
-        
+
         if !isRechable.value {
             alertMessage.onNext(AlertMessage(title: "", message: "You aren't connected to internet"))
             return
@@ -96,9 +95,8 @@ final class ArticlesListViewModel {
             self.isLoading.accept(false)
 
             if case let .success(response) = result {
-                
                 self.fetchStatus = .didFetch
-                
+
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     do {

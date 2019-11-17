@@ -6,10 +6,10 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
+import Reachability
 import RxRelay
 import RxSwift
 import UIKit
-import Reachability
 
 protocol ArticlesListVCProtocol: AnyObject {
     var onArticleSelected: ((ArticleViewModel) -> Void)? { get set }
@@ -39,30 +39,30 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
     deinit {
         reachability.stopNotifier()
         reachability = nil
-     }
+    }
 
-     private func setReachablity() {
+    private func setReachablity() {
         reachability = try! Reachability()
 
-        reachability.whenReachable = { [weak self]  _ in
+        reachability.whenReachable = { [weak self] _ in
             guard let self = self else {
                 return
             }
             self.articlesListViewModel.updateRechablity(rechable: true)
-         }
-         reachability.whenUnreachable = { [weak self]  _ in
+        }
+        reachability.whenUnreachable = { [weak self] _ in
             guard let self = self else {
                 return
             }
             self.articlesListViewModel.updateRechablity(rechable: false)
-         }
+        }
         do {
             try reachability.startNotifier()
         } catch {
             print("Unable to start notifier")
         }
-     }
-    
+    }
+
     // MARK: - UI
 
     private func initLoadingView() {
