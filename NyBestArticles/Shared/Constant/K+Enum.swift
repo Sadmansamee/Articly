@@ -13,4 +13,16 @@ struct KEnum {
         case date = "yyyy-MM-dd"
         case prettyDate = "dd MMM yyyy"
     }
+
+    enum FetchableDays: Int {
+        case one = 1
+        case seven = 7
+    }
+
+    enum FetchStatus {
+        case none
+        case didFetch
+        case willFetch
+        case fetching
+    }
 }

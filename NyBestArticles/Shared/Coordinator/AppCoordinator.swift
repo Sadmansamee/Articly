@@ -40,7 +40,9 @@ final class AppCoordinator: BaseCoordinator {
         self.window = window
         self.container = container
         self.navigationController = navigationController
-
+        if #available(iOS 11.0, *) {
+            self.navigationController.navigationBar.prefersLargeTitles = true
+        }
         self.window.rootViewController = navigationController
     }
 }

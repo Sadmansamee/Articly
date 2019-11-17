@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A13EF5A23811BFA00589E36 /* NetworkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A13EF5923811BFA00589E36 /* NetworkState.swift */; };
 		1A3643A82380055E000E66ED /* ArticlesListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643A72380055E000E66ED /* ArticlesListViewModelTest.swift */; };
 		1A3643AA23800737000E66ED /* ArticleViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643A923800737000E66ED /* ArticleViewModelTest.swift */; };
 		1A3643AC238008C0000E66ED /* MediaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643AB238008C0000E66ED /* MediaTest.swift */; };
@@ -76,6 +77,7 @@
 /* Begin PBXFileReference section */
 		06AF3C071C7722EE82D68405 /* Pods-NyBestArticlesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyBestArticlesTests.debug.xcconfig"; path = "Target Support Files/Pods-NyBestArticlesTests/Pods-NyBestArticlesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		192208605A4C86E497F29731 /* Pods_NyBestArticles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NyBestArticles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A13EF5923811BFA00589E36 /* NetworkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkState.swift; sourceTree = "<group>"; };
 		1A3643A72380055E000E66ED /* ArticlesListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListViewModelTest.swift; sourceTree = "<group>"; };
 		1A3643A923800737000E66ED /* ArticleViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTest.swift; sourceTree = "<group>"; };
 		1A3643AB238008C0000E66ED /* MediaTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTest.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				1ADC8570234DC5CD0019AC62 /* AlertMessage.swift */,
 				1A3F0DB1237F1F15000D8733 /* ThrowableDecodable.swift */,
 				1A3F0DB3237F215D000D8733 /* NestedDecodable.swift */,
+				1A13EF5923811BFA00589E36 /* NetworkState.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				1A3F0D88237D84D2000D8733 /* HomeCoordinator.swift in Sources */,
 				1A3F0DA4237DDC58000D8733 /* Extension+Collection.swift in Sources */,
 				1ADC8555234D9A6D0019AC62 /* AppCoordinator.swift in Sources */,
+				1A13EF5A23811BFA00589E36 /* NetworkState.swift in Sources */,
 				1A3F0D92237D8609000D8733 /* MockJsonFile.swift in Sources */,
 				1A3F0D8E237D85B2000D8733 /* ArticlesListService.swift in Sources */,
 				1A3F0DAA237DE2F1000D8733 /* Extension+RX.swift in Sources */,
@@ -839,7 +843,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.sadmansamee.NyBestArticles;
+				PRODUCT_BUNDLE_IDENTIFIER = me.sadmansamee.myarticles;
 				PRODUCT_NAME = NyBestArticles;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -858,7 +862,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.sadmansamee.NyBestArticles;
+				PRODUCT_BUNDLE_IDENTIFIER = me.sadmansamee.myarticles;
 				PRODUCT_NAME = NyBestArticles;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

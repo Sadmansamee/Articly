@@ -33,7 +33,7 @@ class ArticlesListServiceTest: QuickSpec {
             }
             context("when initialized and token is available") {
                 it("should get 200") {
-                    sut.request(.mostViewedArticles, completion: { result in
+                    sut.request(.mostViewedArticles(days: KEnum.FetchableDays.one.rawValue), completion: { result in
 
                         if case let .success(response) = result {
                             expect(response.statusCode).to(equal(200))

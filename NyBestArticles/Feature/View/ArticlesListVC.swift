@@ -20,8 +20,7 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
 
     var articlesListViewModel: ArticlesListViewModel!
     private var disposeBag = DisposeBag()
-
-    private var reachability: Reachability?
+    private var reachability: Reachability!
 
     @IBOutlet var tableView: UITableView!
     var loadingView: UIActivityIndicatorView!
@@ -31,23 +30,36 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
 
         title = "My Articles"
         initLoadingView()
-        viewModelCallbacks()
         setUpTableView()
         setTableViewModel()
+        setReachablity()
+        viewModelCallbacks()
     }
 
     deinit {
+        reachability.stopNotifier()
         reachability = nil
     }
 
     private func setReachablity() {
-        reachability = try? Reachability()
+        reachability = try! Reachability()
 
-        reachability?.whenReachable = { _ in
+        reachability.whenReachable = { [weak self] _ in
+            guard let self = self else {
+                return
+            }
             self.articlesListViewModel.updateRechablity(rechable: true)
         }
-        reachability?.whenUnreachable = { _ in
+        reachability.whenUnreachable = { [weak self] _ in
+            guard let self = self else {
+                return
+            }
             self.articlesListViewModel.updateRechablity(rechable: false)
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
         }
     }
 
@@ -71,9 +83,7 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
 
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-
         present(alert, animated: true)
     }
 }
@@ -88,7 +98,6 @@ extension ArticlesListVC {
                 guard let self = self else {
                     return
                 }
-
                 self.showAlert(title: $0.title ?? "", message: $0.message ?? "")
             }.subscribe()
             .disposed(by: disposeBag)

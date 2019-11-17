@@ -102,15 +102,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="Qhj-wz-u3C">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Qhj-wz-u3C">
                                         <rect key="frame" x="0.0" y="328" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qhj-wz-u3C" id="28G-fB-ebg">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeZ-C5-c4c">
-                                                    <rect key="frame" x="12" y="7" width="339" height="30"/>
+                                                    <rect key="frame" x="12" y="7" width="371" height="30"/>
                                                     <state key="normal" title="Read full story"/>
                                                     <connections>
                                                         <action selector="actionReadFullStory:" destination="XxX-iG-kp1" eventType="touchUpInside" id="NBt-ZP-xuA"/>
