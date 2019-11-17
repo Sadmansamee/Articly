@@ -12,10 +12,10 @@
 ## This project has the following:
 * Code from every pull request,master branch check with [Codebeat](https://codebeat.co/) with **A grade**. 
 * MVVM design pattern.
-* Coordinator pattern for navigation.
-* Quick and Nimble for Unit-Test.
+* [Coordinator pattern](https://www.raywenderlich.com/158-coordinator-tutorial-for-ios-getting-started) for navigation.
+* [Quick](https://github.com/Quick/Quick) and [Nimble](https://github.com/Quick/Nimble) for Unit-Test.
 * Dependency Injection with [Swinject](https://github.com/Swinject/Swinject)
-* RxSwift for MVVM binding.
+* [RxSwift](https://github.com/ReactiveX/RxSwift) for MVVM binding.
 * [Moya](https://github.com/Moya/Moya) for API call.
 * [Realm](https://realm.io/) for persistant storage.
 
