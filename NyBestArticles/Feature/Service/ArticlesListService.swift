@@ -9,7 +9,7 @@
 import Moya
 
 public enum ArticlesListService {
-    case mostViewedArticles
+    case mostViewedArticles(days: Int)
 }
 
 extension ArticlesListService: TargetType {
@@ -19,8 +19,8 @@ extension ArticlesListService: TargetType {
 
     public var path: String {
         switch self {
-        case .mostViewedArticles:
-            return "/svc/mostpopular/v2/viewed/1.json"
+        case let .mostViewedArticles(days):
+            return "/svc/mostpopular/v2/viewed/\(days).json"
         }
     }
 

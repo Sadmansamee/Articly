@@ -10,7 +10,15 @@ import Kingfisher
 import RxSwift
 import UIKit
 
+protocol ArticleDetailVCProtocol: AnyObject {
+    var onBack: (() -> Void)? { get set }
+}
+
 class ArticleDetailVC: UITableViewController, HomeStoryboardLoadable {
+    // MARK: - ArticleDetailVCProtocol
+
+    var onBack: (() -> Void)?
+
     // MARK: - Properties
 
     private var disposeBag = DisposeBag()
@@ -30,9 +38,8 @@ class ArticleDetailVC: UITableViewController, HomeStoryboardLoadable {
         setUI()
         setUIProperties()
     }
-    
-    private func setUI(){
-    }
+
+    private func setUI() {}
 
     private func setUIProperties() {
         if let viewModel = articleViewModel {

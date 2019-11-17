@@ -44,7 +44,10 @@ final class HomeCoordinator: BaseCoordinator, CoordinatorFinishOutput {
 
     private func showArticleDetailVC(viewModel: ArticleViewModel) {
         let viewController = container.resolveViewController(ArticleDetailVC.self)
-        viewController.articleViewModel = viewModel // ArticleDetailViewModel(viewmodel: viewModel)
-        navigationController.pushViewController(viewController, animated: true)
+        viewController.onBack = { [unowned self] in
+            self.navigationController.dismiss(animated: true, completion: nil)
+        }
+        viewController.articleViewModel = viewModel
+        navigationController.present(viewController, animated: true, completion: nil)
     }
 }
