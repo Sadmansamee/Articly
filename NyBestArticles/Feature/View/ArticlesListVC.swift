@@ -23,12 +23,12 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
     private var reachability: Reachability?
 
     @IBOutlet var tableView: UITableView!
-    var loadingView: UIActivityIndicatorView!
+    private var loadingView: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "My Articles"
+        title = "Articly"
         initLoadingView()
         setUpTableView()
         setTableViewModel()

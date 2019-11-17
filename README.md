@@ -1,6 +1,6 @@
 [![codebeat badge](https://codebeat.co/badges/a2daf8ab-0a7a-427a-a18d-fb490aec1017)](https://codebeat.co/projects/github-com-sadmansamee-nybestarticles-master)
 
-# NYArticles
+# Articly
  
 * This project was written and compiled using **Xcode 11.2.1**, so if it doesn’t compile wit previous version s of Xcode then please upgarde to **Xcode 11.2.1**.
 * This project used [Cocoapod](https://cocoapods.org/) **1.8.4** as a dependency manager.
@@ -18,6 +18,7 @@
 * [RxSwift](https://github.com/ReactiveX/RxSwift) for MVVM binding.
 * [Moya](https://github.com/Moya/Moya) for API call.
 * [Realm](https://realm.io/) for persistant storage.
+* iOS 13 Dark Mode supported
 
 
 ## How to run
