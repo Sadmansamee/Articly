@@ -36,8 +36,8 @@ public extension JSONDecoder {
 
             // Loop getting container until reach final one
             var targetContainer = try decoder.container(keyedBy: Key.self)
-            for k in keyPaths {
-                let key = Key(stringValue: String(k))!
+            for keypath in keyPaths {
+                let key = Key(stringValue: String(keypath))!
                 targetContainer = try targetContainer.nestedContainer(keyedBy: Key.self, forKey: key)
             }
             model = try targetContainer.decode(TargetModel.self, forKey: Key(stringValue: lastKey)!)

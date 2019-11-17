@@ -5,7 +5,6 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-import Foundation
 import Moya
 import RealmSwift
 import Swinject

@@ -7,7 +7,7 @@
 //
 
 import Reachability
-import RxRelay
+import RxCocoa
 import RxSwift
 import UIKit
 
@@ -20,7 +20,7 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
 
     var articlesListViewModel: ArticlesListViewModel!
     private var disposeBag = DisposeBag()
-    private var reachability: Reachability!
+    private var reachability: Reachability?
 
     @IBOutlet var tableView: UITableView!
     var loadingView: UIActivityIndicatorView!
@@ -37,27 +37,27 @@ class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCPr
     }
 
     deinit {
-        reachability.stopNotifier()
+        reachability?.stopNotifier()
         reachability = nil
     }
 
     private func setReachablity() {
-        reachability = try! Reachability()
+        reachability = try? Reachability()
 
-        reachability.whenReachable = { [weak self] _ in
+        reachability?.whenReachable = { [weak self] _ in
             guard let self = self else {
                 return
             }
             self.articlesListViewModel.updateRechablity(rechable: true)
         }
-        reachability.whenUnreachable = { [weak self] _ in
+        reachability?.whenUnreachable = { [weak self] _ in
             guard let self = self else {
                 return
             }
             self.articlesListViewModel.updateRechablity(rechable: false)
         }
         do {
-            try reachability.startNotifier()
+            try reachability?.startNotifier()
         } catch {
             print("Unable to start notifier")
         }

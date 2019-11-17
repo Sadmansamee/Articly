@@ -11,15 +11,12 @@ import Nimble
 import Quick
 import RxSwift
 
-
 @testable import NyBestArticles
 
 class MediaTest: QuickSpec {
     override func spec() {
         describe("ArticleTest") {
-            
             var sut: Media!
-            
             afterEach {
                 sut = nil
             }

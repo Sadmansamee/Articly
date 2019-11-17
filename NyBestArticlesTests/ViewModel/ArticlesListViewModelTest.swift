@@ -32,8 +32,7 @@ class ArticlesListViewModelTest: QuickSpec {
                 var config = Realm.Configuration()
                 config.inMemoryIdentifier = "Test"
                 let realm = try! Realm(configuration: config)
-                
-                sut = ArticlesListViewModel(articlesListProvider: stubbingProvider,realm: realm)
+                sut = ArticlesListViewModel(articlesListProvider: stubbingProvider, realm: realm)
             }
             context("when initialized and data count okhay") {
                 it("should load all the Articles") {

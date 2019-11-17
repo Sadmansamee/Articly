@@ -13,7 +13,7 @@ enum Constant {
     }
 
     struct ApiKey {
-        //(Temporaray it is there for easiness purpose for the reviewer team)
+        // (Temporaray it is there for easiness purpose for the reviewer team)
         static let nyApiKey = "9GEEPiVK2ZXoD8hmzeO4M4xPCpw6IvD8"
     }
 }
