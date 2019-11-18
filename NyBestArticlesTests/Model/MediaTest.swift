@@ -11,7 +11,7 @@ import Nimble
 import Quick
 import RxSwift
 
-@testable import NyBestArticles
+@testable import Articly
 
 class MediaTest: QuickSpec {
     override func spec() {

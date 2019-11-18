@@ -13,7 +13,7 @@ import Quick
 import RxSwift
 
 
-@testable import NyBestArticles
+@testable import Articly
 
 class ArticleViewModelTest: QuickSpec {
     override func spec() {

@@ -14,7 +14,7 @@ import RxBlocking
 import RxSwift
 import RealmSwift
 
-@testable import NyBestArticles
+@testable import Articly
 
 class ArticlesListViewModelTest: QuickSpec {
     override func spec() {

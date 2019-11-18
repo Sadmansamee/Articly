@@ -23,7 +23,7 @@ final class ArticlesListViewModel {
     private let mostViewedArticleViewModels = BehaviorRelay<[Article]>(value: [])
 
     private var isRechable = BehaviorRelay<Bool>(value: false)
-    private let cleanableDuration = NSDate(timeIntervalSinceNow: -(7 * 24 * 60 * 60))
+    private let cleanableDuration = NSDate(timeIntervalSinceNow: -(30 * 24 * 60 * 60)) // remove 30 days old articles
 
     init(articlesListProvider: MoyaProvider<ArticlesListService>, realm: Realm) {
         self.articlesListProvider = articlesListProvider
@@ -68,7 +68,7 @@ final class ArticlesListViewModel {
 
         let today = Date()
         if let firstArticle = localItems.first, let difference = firstArticle.createdAt.totalDistance(from: today, resultIn: .day) {
-            // Fetch from server in 6 hour interval
+            // Fetch from server in 1 day interval
             if difference >= 1 {
                 // if there was no data before it will load last one day's data
                 fetchableDays = KEnum.FetchableDays.one

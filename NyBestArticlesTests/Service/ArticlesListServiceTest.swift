@@ -13,7 +13,7 @@ import Nimble
 import Quick
 import RxSwift
 
-@testable import NyBestArticles
+@testable import Articly
 
 class ArticlesListServiceTest: QuickSpec {
     override func spec() {

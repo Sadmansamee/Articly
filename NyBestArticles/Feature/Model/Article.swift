@@ -33,15 +33,14 @@ class Article: Object, Decodable {
         case media
     }
 
-    enum MediaKeys: String, CodingKey {
-        case coordinates
-    }
-
     required init() {
         super.init()
     }
 
-    convenience init(url: String, section: String, byline: String, title: String, abstract: String, publishedDate: Date, source: String, id: Int, views: Int, largeImage: String, smallImage: String) {
+    convenience init(url: String, section: String,
+                     byline: String, title: String, abstract: String,
+                     publishedDate: Date, source: String, id: Int, views: Int,
+                     largeImage: String, smallImage: String) {
         self.init()
         self.url = url
         self.section = section
@@ -63,7 +62,8 @@ class Article: Object, Decodable {
         let byline = try values.decode(String.self, forKey: .byline)
         let title = try values.decode(String.self, forKey: .title)
         let abstract = try values.decode(String.self, forKey: .abstract)
-        let publishedDate = try values.decode(String.self, forKey: .publishedDate).toDate(withFormat: KEnum.TimeFormat.date.rawValue)
+        let publishedDate = try values.decode(String.self, forKey: .publishedDate)
+            .toDate(withFormat: KEnum.TimeFormat.date.rawValue)
         let source = try values.decode(String.self, forKey: .source)
         let id = try values.decode(Int.self, forKey: .id)
         let views = try values.decode(Int.self, forKey: .views)
@@ -72,11 +72,16 @@ class Article: Object, Decodable {
 
         var largeImage: String = ""
         var smallImage: String = ""
-        if let firstMedia = media.first, let firstMeta = firstMedia.metadata.first, let lastMeta = firstMedia.metadata.last {
+        if let firstMedia = media.first,
+            let firstMeta = firstMedia.metadata.first,
+            let lastMeta = firstMedia.metadata.last {
             smallImage = firstMeta.url
             largeImage = lastMeta.url
         }
 
-        self.init(url: url, section: section, byline: byline, title: title, abstract: abstract, publishedDate: publishedDate, source: source, id: id, views: views, largeImage: largeImage, smallImage: smallImage)
+        self.init(url: url, section: section, byline: byline, title: title,
+                  abstract: abstract, publishedDate: publishedDate,
+                  source: source, id: id, views: views,
+                  largeImage: largeImage, smallImage: smallImage)
     }
 }

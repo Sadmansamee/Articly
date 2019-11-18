@@ -12,7 +12,7 @@ import Quick
 import RxSwift
 
 
-@testable import NyBestArticles
+@testable import Articly
 
 class MetadataTest: QuickSpec {
     override func spec() {
