@@ -10,7 +10,7 @@
 
 
 ## This project has the following:
-* Code from every pull request,master branch check with [Codebeat](https://codebeat.co/) with **A grade**. 
+* Code from every pull request,master branch checked with [Codebeat](https://codebeat.co/) with **A grade**. 
 * MVVM design pattern.
 * [Coordinator pattern](https://www.raywenderlich.com/158-coordinator-tutorial-for-ios-getting-started) for navigation.
 * [Quick](https://github.com/Quick/Quick) and [Nimble](https://github.com/Quick/Nimble) for Unit-Test.
@@ -23,5 +23,7 @@
 
 ## How to run
 * Clone this project.
+* Ppen your terminal
 * **CD** to project folder.
-* ```pod install``` or [bundler](https://bundler.io/) is also configured with this project, for that follow [this instruction](https://mikebuss.com/2017/01/21/dependencies-crash-course/) then run ```bundler exec pod install```
+* run ```pod install``` or [bundler](https://bundler.io/) is also configured with this project, for that follow [this instruction](https://mikebuss.com/2017/01/21/dependencies-crash-course/) then run ```bundler exec pod install``` on terminal. 
+* Open ```.xcworkspace``` file.
