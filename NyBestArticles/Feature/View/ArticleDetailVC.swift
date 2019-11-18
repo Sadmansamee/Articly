@@ -7,21 +7,19 @@
 //
 
 import Kingfisher
-import RxSwift
 import UIKit
 
 protocol ArticleDetailVCProtocol: AnyObject {
     var onBack: (() -> Void)? { get set }
 }
 
-class ArticleDetailVC: UITableViewController, HomeStoryboardLoadable {
+class ArticleDetailVC: UITableViewController, HomeStoryboardLoadable, ArticleDetailVCProtocol {
     // MARK: - ArticleDetailVCProtocol
 
     var onBack: (() -> Void)?
 
     // MARK: - Properties
 
-    private var disposeBag = DisposeBag()
     var articleViewModel: ArticleViewModel?
 
     // MARK: - UI Properties

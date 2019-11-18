@@ -6,7 +6,6 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-import Foundation
 import Moya
 import RealmSwift
 import RxRelay
@@ -24,6 +23,7 @@ final class ArticlesListViewModel {
     private let mostViewedArticleViewModels = BehaviorRelay<[Article]>(value: [])
 
     private var isRechable = BehaviorRelay<Bool>(value: false)
+    private let cleanableDuration = NSDate(timeIntervalSinceNow: -(30 * 24 * 60 * 60)) // remove 30 days old articles
 
     init(articlesListProvider: MoyaProvider<ArticlesListService>, realm: Realm) {
         self.articlesListProvider = articlesListProvider
@@ -67,8 +67,8 @@ final class ArticlesListViewModel {
         mostViewedArticleViewModels.accept(localItems)
 
         let today = Date()
-        if let firstArticle = localItems.first, let difference = firstArticle.createdAt.totalDistance(from: today, resultIn: .minute) {
-            // Fetch from server in 6 hour interval
+        if let firstArticle = localItems.first, let difference = firstArticle.createdAt.totalDistance(from: today, resultIn: .day) {
+            // Fetch from server in 1 day interval
             if difference >= 1 {
                 // if there was no data before it will load last one day's data
                 fetchableDays = KEnum.FetchableDays.one
@@ -100,15 +100,25 @@ final class ArticlesListViewModel {
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     do {
-                        let throwables = try JSONDecoder().decode([Throwable<Article>].self, from: filteredResponse.data, keyPath: "results")
-                        let items = throwables.compactMap { try? $0.result.get() }.reversed()
+                        let fetchedItems = try JSONDecoder().decode([Article].self, from: filteredResponse.data, keyPath: "results")
 
-                        let data = items + self.mostViewedArticleViewModels.value
-                        self.mostViewedArticleViewModels.accept(data)
+                        // find out items to be deleted
+                        let itemsToDelete = self.realm.objects(Article.self).filter("\(Article.CodingKeys.createdAt.rawValue) < %@", self.cleanableDuration)
+                        // remove from array
+                        let deletedFiltered = self.mostViewedArticleViewModels.value.filter { element in
+                            !itemsToDelete.contains(element)
+                        }
 
                         try? self.realm.write {
-                            self.realm.add(items, update: .modified)
+                            self.realm.delete(itemsToDelete)
                         }
+
+                        try? self.realm.write {
+                            self.realm.add(fetchedItems, update: .modified)
+                        }
+
+                        let data = fetchedItems + deletedFiltered
+                        self.mostViewedArticleViewModels.accept(data)
 
                     } catch let error as NSError {
                         print(error.localizedDescription)
@@ -123,12 +133,5 @@ final class ArticlesListViewModel {
             }
 
         })
-    }
-
-    private func clearOldData() {
-        if let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date()) {
-            let itemsToDelete = realm.objects(Article.self).filter("\(Article.CodingKeys.createdAt.rawValue) < \(thirtyDaysAgo)")
-            realm.delete(itemsToDelete)
-        }
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import NyBestArticles
+@testable import Articly
 import Foundation
 import Moya
 import Swinject
