@@ -21,12 +21,23 @@ target 'NyBestArticles' do
   use_frameworks!
 	
     # Pods for testing
-    
+    pod 'SpecLeaks'
     pod 'RxBlocking', '~> 5'
     pod 'Quick'
     pod 'Nimble'
     pod 'Swinject' , '~> 2.7.1'
     pod 'SwinjectStoryboard', '~> 2.2.0'
+    
+    post_install do |installer|
+      installer.pods_project.targets.each do |target|
+        if ['SpecLeaks'].include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['ENABLE_BITCODE'] = 'NO'
+            end
+        end
+      end
+    end
+    
   end
   
   

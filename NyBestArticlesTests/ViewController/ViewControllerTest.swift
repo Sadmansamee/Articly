@@ -3,6 +3,7 @@
 import Nimble
 import Quick
 import Swinject
+import SpecLeaks
 
 class ViewControllerTest: QuickSpec {
     override func spec() {

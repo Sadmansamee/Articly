@@ -25,6 +25,9 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SpecLeaks (0.1.8):
+    - Nimble
+    - Quick
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
@@ -39,6 +42,7 @@ DEPENDENCIES:
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
+  - SpecLeaks
   - Swinject (~> 2.7.1)
   - SwinjectStoryboard (~> 2.2.0)
 
@@ -57,6 +61,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SpecLeaks
     - Swinject
     - SwinjectStoryboard
 
@@ -74,9 +79,10 @@ SPEC CHECKSUMS:
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SpecLeaks: 0fa048f06b1adb36d8d3e86e039b5f67bf74bb06
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: d10a3d8e2e1919e5d24b20afd6fe5119ac7d6ee2
+PODFILE CHECKSUM: 1b7bd87dbf6f264d75bb28ea78d5294baeafa564
 
 COCOAPODS: 1.8.4
