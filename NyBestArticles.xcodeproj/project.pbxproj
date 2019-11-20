@@ -17,12 +17,6 @@
 		1A3643B523800B7C000E66ED /* ArticlesListServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643B423800B7B000E66ED /* ArticlesListServiceTest.swift */; };
 		1A3643B823800CAC000E66ED /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643B723800CAC000E66ED /* ViewControllerTest.swift */; };
 		1A3643BA23800D57000E66ED /* ViewControllerTest+SetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643B923800D57000E66ED /* ViewControllerTest+SetUp.swift */; };
-		1A3643C223800E2E000E66ED /* AnalyzeLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643BC23800E2E000E66ED /* AnalyzeLeak.swift */; };
-		1A3643C323800E2E000E66ED /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643BD23800E2E000E66ED /* Matchers.swift */; };
-		1A3643C423800E2E000E66ED /* LeaksAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643BE23800E2E000E66ED /* LeaksAnalyzer.swift */; };
-		1A3643C523800E2E000E66ED /* LeakTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643BF23800E2E000E66ED /* LeakTest.swift */; };
-		1A3643C623800E2E000E66ED /* AnalyzeLeakAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643C023800E2E000E66ED /* AnalyzeLeakAction.swift */; };
-		1A3643C723800E2E000E66ED /* Expectation+Leaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3643C123800E2E000E66ED /* Expectation+Leaks.swift */; };
 		1A3F0D88237D84D2000D8733 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D87237D84D2000D8733 /* HomeCoordinator.swift */; };
 		1A3F0D8A237D852C000D8733 /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D89237D852C000D8733 /* ArticlesListVC.swift */; };
 		1A3F0D8E237D85B2000D8733 /* ArticlesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3F0D8D237D85B2000D8733 /* ArticlesListService.swift */; };
@@ -83,12 +77,6 @@
 		1A3643B423800B7B000E66ED /* ArticlesListServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListServiceTest.swift; sourceTree = "<group>"; };
 		1A3643B723800CAC000E66ED /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
 		1A3643B923800D57000E66ED /* ViewControllerTest+SetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllerTest+SetUp.swift"; sourceTree = "<group>"; };
-		1A3643BC23800E2E000E66ED /* AnalyzeLeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyzeLeak.swift; sourceTree = "<group>"; };
-		1A3643BD23800E2E000E66ED /* Matchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matchers.swift; sourceTree = "<group>"; };
-		1A3643BE23800E2E000E66ED /* LeaksAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaksAnalyzer.swift; sourceTree = "<group>"; };
-		1A3643BF23800E2E000E66ED /* LeakTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeakTest.swift; sourceTree = "<group>"; };
-		1A3643C023800E2E000E66ED /* AnalyzeLeakAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyzeLeakAction.swift; sourceTree = "<group>"; };
-		1A3643C123800E2E000E66ED /* Expectation+Leaks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Expectation+Leaks.swift"; sourceTree = "<group>"; };
 		1A3F0D87237D84D2000D8733 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		1A3F0D89237D852C000D8733 /* ArticlesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListVC.swift; sourceTree = "<group>"; };
 		1A3F0D8D237D85B2000D8733 /* ArticlesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListService.swift; sourceTree = "<group>"; };
@@ -182,24 +170,10 @@
 		1A3643B623800C8F000E66ED /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1A3643BB23800E2E000E66ED /* SpeckLeaks */,
 				1A3643B723800CAC000E66ED /* ViewControllerTest.swift */,
 				1A3643B923800D57000E66ED /* ViewControllerTest+SetUp.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		1A3643BB23800E2E000E66ED /* SpeckLeaks */ = {
-			isa = PBXGroup;
-			children = (
-				1A3643BC23800E2E000E66ED /* AnalyzeLeak.swift */,
-				1A3643BD23800E2E000E66ED /* Matchers.swift */,
-				1A3643BE23800E2E000E66ED /* LeaksAnalyzer.swift */,
-				1A3643BF23800E2E000E66ED /* LeakTest.swift */,
-				1A3643C023800E2E000E66ED /* AnalyzeLeakAction.swift */,
-				1A3643C123800E2E000E66ED /* Expectation+Leaks.swift */,
-			);
-			path = SpeckLeaks;
 			sourceTree = "<group>";
 		};
 		1A3F0D82237D8422000D8733 /* Service */ = {
@@ -586,16 +560,10 @@
 			files = (
 				1A3643B823800CAC000E66ED /* ViewControllerTest.swift in Sources */,
 				1A3643B523800B7C000E66ED /* ArticlesListServiceTest.swift in Sources */,
-				1A3643C523800E2E000E66ED /* LeakTest.swift in Sources */,
-				1A3643C723800E2E000E66ED /* Expectation+Leaks.swift in Sources */,
-				1A3643C323800E2E000E66ED /* Matchers.swift in Sources */,
-				1A3643C223800E2E000E66ED /* AnalyzeLeak.swift in Sources */,
 				1A3643AA23800737000E66ED /* ArticleViewModelTest.swift in Sources */,
 				1A3643AE238008CE000E66ED /* MetadataTest.swift in Sources */,
 				1A3643BA23800D57000E66ED /* ViewControllerTest+SetUp.swift in Sources */,
 				1A969B35237FFCAF00CA824F /* ArticleTest.swift in Sources */,
-				1A3643C423800E2E000E66ED /* LeaksAnalyzer.swift in Sources */,
-				1A3643C623800E2E000E66ED /* AnalyzeLeakAction.swift in Sources */,
 				1A3643AC238008C0000E66ED /* MediaTest.swift in Sources */,
 				1A3643A82380055E000E66ED /* ArticlesListViewModelTest.swift in Sources */,
 			);
@@ -664,6 +632,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TJ7AMS27YU;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = NyBestArticlesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -686,6 +655,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TJ7AMS27YU;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = NyBestArticlesTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
