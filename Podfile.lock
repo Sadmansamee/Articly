@@ -30,7 +30,7 @@ PODS:
     - Quick
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
-    - Swinject (~> 2.6)
+    - Swinject (~> 2.7.1)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
@@ -44,7 +44,7 @@ DEPENDENCIES:
   - RxSwift (~> 5)
   - SpecLeaks
   - Swinject (~> 2.7.1)
-  - SwinjectStoryboard (~> 2.2.0)
+  - SwinjectStoryboard (from `https://github.com/Swinject/SwinjectStoryboard`, branch `master`)
 
 SPEC REPOS:
   trunk:
@@ -63,7 +63,16 @@ SPEC REPOS:
     - RxSwift
     - SpecLeaks
     - Swinject
-    - SwinjectStoryboard
+
+EXTERNAL SOURCES:
+  SwinjectStoryboard:
+    :branch: master
+    :git: https://github.com/Swinject/SwinjectStoryboard
+
+CHECKOUT OPTIONS:
+  SwinjectStoryboard:
+    :commit: 0ca45c83a8aa398c153d8a036c95abb4343cfa0c
+    :git: https://github.com/Swinject/SwinjectStoryboard
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -81,8 +90,8 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SpecLeaks: 0fa048f06b1adb36d8d3e86e039b5f67bf74bb06
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
-  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
+  SwinjectStoryboard: f0d5b1c16459949d6ff1cbb6610107946b18e1f8
 
-PODFILE CHECKSUM: 1b7bd87dbf6f264d75bb28ea78d5294baeafa564
+PODFILE CHECKSUM: 683cfc9eee43acdecdd1bc563747ce0858761c18
 
 COCOAPODS: 1.8.4

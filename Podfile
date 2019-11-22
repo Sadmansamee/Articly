@@ -12,7 +12,7 @@ target 'NyBestArticles' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'Swinject' , '~> 2.7.1'
-  pod 'SwinjectStoryboard', '~> 2.2.0'
+  pod 'SwinjectStoryboard', :git => "https://github.com/Swinject/SwinjectStoryboard" , :branch => 'master'
   pod 'RealmSwift'
   pod 'ReachabilitySwift'
 
@@ -26,7 +26,7 @@ target 'NyBestArticles' do
     pod 'Quick'
     pod 'Nimble'
     pod 'Swinject' , '~> 2.7.1'
-    pod 'SwinjectStoryboard', '~> 2.2.0'
+    pod 'SwinjectStoryboard', :git => "https://github.com/Swinject/SwinjectStoryboard" , :branch => 'master'
     
     post_install do |installer|
       installer.pods_project.targets.each do |target|
