@@ -399,6 +399,7 @@
 				1ADC8516234C58650019AC62 /* Frameworks */,
 				1ADC8517234C58650019AC62 /* Resources */,
 				1120A6604E6C3A75F643019E /* [CP] Embed Pods Frameworks */,
+				1A67E37923B78C0F006F27E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -489,6 +490,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NyBestArticles/Pods-NyBestArticles-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1A67E37923B78C0F006F27E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which pecker >/dev/null; then\n  pecker\nelse\n  echo \"warning: Pecker not installed, download from https://github.com/woshiccm/Pecker\"\nfi\n";
 		};
 		3896A3BE2645586B7C27E811 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
