@@ -400,6 +400,7 @@
 				1ADC8517234C58650019AC62 /* Resources */,
 				1120A6604E6C3A75F643019E /* [CP] Embed Pods Frameworks */,
 				1A67E37923B78C0F006F27E1 /* ShellScript */,
+				1A07B5DE23B8543B00296561 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -490,6 +491,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NyBestArticles/Pods-NyBestArticles-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1A07B5DE23B8543B00296561 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		1A67E37923B78C0F006F27E1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

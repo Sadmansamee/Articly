@@ -6,7 +6,6 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-import Foundation
 import Nimble
 import Quick
 import RxSwift
@@ -23,7 +22,7 @@ class MediaTest: QuickSpec {
             beforeEach {
                 let path = Bundle.main.path(forResource: MockJson.media.rawValue, ofType: "json")
                 let url = URL(fileURLWithPath: path!)
-                sut = try! JSONDecoder().decode(Media.self, from: Data(contentsOf: url))
+                sut = try? JSONDecoder().decode(Media.self, from: Data(contentsOf: url))
             }
             
             context("Model From Json") {

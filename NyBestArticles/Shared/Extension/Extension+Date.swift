@@ -53,6 +53,4 @@ extension Date {
         let days2 = Calendar.current.component(component, from: date)
         return days1 - days2
     }
-
-    
 }

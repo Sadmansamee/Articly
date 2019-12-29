@@ -26,7 +26,7 @@ class MetadataTest: QuickSpec {
             beforeEach {
                 let path = Bundle.main.path(forResource: MockJson.metadata.rawValue, ofType: "json")
                 let url = URL(fileURLWithPath: path!)
-                sut = try! JSONDecoder().decode(Metadata.self, from: Data(contentsOf: url))
+                sut = try? JSONDecoder().decode(Metadata.self, from: Data(contentsOf: url))
             }
             
             context("Model From Json") {

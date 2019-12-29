@@ -25,7 +25,7 @@ class ArticleTest: QuickSpec {
             beforeEach {
                 let path = Bundle.main.path(forResource: MockJson.article.rawValue, ofType: "json")
                 let url = URL(fileURLWithPath: path!)
-                sut = try! JSONDecoder().decode(Article.self, from: Data(contentsOf: url))
+                sut = try? JSONDecoder().decode(Article.self, from: Data(contentsOf: url))
             }
             
             context("Model From Json") {

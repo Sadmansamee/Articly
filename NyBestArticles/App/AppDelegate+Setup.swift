@@ -13,6 +13,17 @@ extension AppDelegate {
     /**
      Set up the dependency graph in the DI container
      */
+
+    private func JSONResponseDataFormatter(_ data: Data) -> Data {
+        do {
+            let dataAsJSON = try JSONSerialization.jsonObject(with: data)
+            let prettyData =  try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
+            return prettyData
+        } catch {
+            return data // fallback to original data if it can't be serialized.
+        }
+    }
+
     internal func setupDependencies() {
         // MARK: - Persistant storage
 
@@ -27,7 +38,7 @@ extension AppDelegate {
         // MARK: - Providers
 
         container.register(MoyaProvider<ArticlesListService>.self, factory: { _ in
-            MoyaProvider<ArticlesListService>()
+            MoyaProvider<ArticlesListService>(plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: self.JSONResponseDataFormatter)])
         })
 
         // MARK: - View Model

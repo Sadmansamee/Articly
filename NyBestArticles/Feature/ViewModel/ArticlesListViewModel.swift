@@ -121,6 +121,7 @@ final class ArticlesListViewModel {
                         self.mostViewedArticleViewModels.accept(data)
 
                     } catch let error as NSError {
+                        
                         print(error.localizedDescription)
                     }
 

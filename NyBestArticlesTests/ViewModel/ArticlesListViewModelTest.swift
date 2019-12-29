@@ -6,7 +6,6 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-import Foundation
 import Moya
 import Nimble
 import Quick
@@ -31,16 +30,17 @@ class ArticlesListViewModelTest: QuickSpec {
                 
                 var config = Realm.Configuration()
                 config.inMemoryIdentifier = "Test"
-                let realm = try! Realm(configuration: config)
-                sut = ArticlesListViewModel(articlesListProvider: stubbingProvider, realm: realm)
+                if let realm = try? Realm(configuration: config){
+                    sut = ArticlesListViewModel(articlesListProvider: stubbingProvider, realm: realm)
+                }
             }
             context("when initialized and data count okhay") {
                 it("should load all the Articles") {
-                    let result = try! sut.onMostViwedArticleViewModels.toBlocking().first()
+                    let result = try? sut.onMostViwedArticleViewModels.toBlocking().first()
                     expect(result?.count).toEventually(beGreaterThanOrEqualTo(10), timeout: 5)
                 }
                 it("First item title should match") {
-                    let result = try! sut.onMostViwedArticleViewModels.toBlocking().first()
+                    let result = try? sut.onMostViwedArticleViewModels.toBlocking().first()
                         expect(result?.first?.title).to(equal("Yoga Is Finally Facing Consent and Unwanted Touch"))
                         expect(result?.first?.smallImage).to(equal("https://static01.nyt.com/images/2019/11/10/fashion/08yogatouch-web1/08yogatouch-web1-thumbStandard.jpg"))
                     expect(result?.first?.largeImage).to(equal("https://static01.nyt.com/images/2019/11/10/fashion/08yogatouch-web1/08yogatouch-web1-mediumThreeByTwo440.jpg"))

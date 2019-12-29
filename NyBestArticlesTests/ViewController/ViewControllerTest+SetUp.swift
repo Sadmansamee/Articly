@@ -6,9 +6,7 @@
 //  Copyright © 2019 Sadman Samee. All rights reserved.
 //
 
-import Foundation
 @testable import Articly
-import Foundation
 import Moya
 import Swinject
 import RealmSwift

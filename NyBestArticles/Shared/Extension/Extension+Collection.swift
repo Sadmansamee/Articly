@@ -10,6 +10,6 @@ import RealmSwift
 
 extension Results {
     var array: [Element]? {
-        return count > 0 ? map { $0 } : nil
+        return !isEmpty ? map { $0 } : nil
     }
 }

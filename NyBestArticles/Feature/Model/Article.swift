@@ -68,11 +68,11 @@ class Article: Object, Decodable {
         let id = try values.decode(Int.self, forKey: .id)
         let views = try values.decode(Int.self, forKey: .views)
 
-        let media = try values.decode([Media].self, forKey: .media)
+        let media = try values.decodeIfPresent([Media].self, forKey: .media)
 
         var largeImage: String = ""
         var smallImage: String = ""
-        if let firstMedia = media.first,
+        if let firstMedia = media?.first,
             let firstMeta = firstMedia.metadata.first,
             let lastMeta = firstMedia.metadata.last {
             smallImage = firstMeta.url

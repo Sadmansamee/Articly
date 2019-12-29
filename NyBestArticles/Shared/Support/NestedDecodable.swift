@@ -29,6 +29,7 @@ public extension JSONDecoder {
 
         init(from decoder: Decoder) throws {
             // Split nested paths with '.'
+
             var keyPaths = (decoder.userInfo[JSONDecoder.nestedModelKeyPathCodingUserInfoKey]! as! String).split(separator: ".")
 
             // Get last key to extract in the end
