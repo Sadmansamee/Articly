@@ -287,6 +287,7 @@
 		1ADC854E234C986D0019AC62 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				1ADC8554234D9A6D0019AC62 /* AppCoordinator.swift */,
 				1ADC851C234C58650019AC62 /* AppDelegate.swift */,
 				1ADC854F234D99690019AC62 /* AppDelegate+Setup.swift */,
 			);
@@ -297,7 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				1ADC8552234D9A2D0019AC62 /* Coordinator.swift */,
-				1ADC8554234D9A6D0019AC62 /* AppCoordinator.swift */,
 				1ADC8556234D9C150019AC62 /* BaseCoordinator.swift */,
 			);
 			path = Coordinator;
