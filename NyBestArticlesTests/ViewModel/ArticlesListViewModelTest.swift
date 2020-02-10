@@ -9,9 +9,9 @@
 import Moya
 import Nimble
 import Quick
+import RealmSwift
 import RxBlocking
 import RxSwift
-import RealmSwift
 
 @testable import Articly
 
@@ -27,10 +27,10 @@ class ArticlesListViewModelTest: QuickSpec {
             }
             beforeEach {
                 stubbingProvider = MoyaProvider<ArticlesListService>(stubClosure: MoyaProvider.immediatelyStub)
-                
+
                 var config = Realm.Configuration()
                 config.inMemoryIdentifier = "Test"
-                if let realm = try? Realm(configuration: config){
+                if let realm = try? Realm(configuration: config) {
                     sut = ArticlesListViewModel(articlesListProvider: stubbingProvider, realm: realm)
                 }
             }
@@ -41,11 +41,11 @@ class ArticlesListViewModelTest: QuickSpec {
                 }
                 it("First item title should match") {
                     let result = try? sut.onMostViwedArticleViewModels.toBlocking().first()
-                        expect(result?.first?.title).to(equal("Yoga Is Finally Facing Consent and Unwanted Touch"))
-                        expect(result?.first?.smallImage).to(equal("https://static01.nyt.com/images/2019/11/10/fashion/08yogatouch-web1/08yogatouch-web1-thumbStandard.jpg"))
+                    expect(result?.first?.title).to(equal("Yoga Is Finally Facing Consent and Unwanted Touch"))
+                    expect(result?.first?.smallImage).to(equal("https://static01.nyt.com/images/2019/11/10/fashion/08yogatouch-web1/08yogatouch-web1-thumbStandard.jpg"))
                     expect(result?.first?.largeImage).to(equal("https://static01.nyt.com/images/2019/11/10/fashion/08yogatouch-web1/08yogatouch-web1-mediumThreeByTwo440.jpg"))
                 }
-                
+
                 it("Loading should not show") {
                     sut.onLoading.asObservable().debug().subscribe(
                         onNext: { isLoading in

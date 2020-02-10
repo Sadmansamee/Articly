@@ -11,7 +11,6 @@ import Nimble
 import Quick
 import RxSwift
 
-
 @testable import Articly
 
 class ArticleViewModelTest: QuickSpec {
@@ -27,7 +26,6 @@ class ArticleViewModelTest: QuickSpec {
                 sut = try? JSONDecoder().decode(Article.self, from: Data(contentsOf: url))
             }
             context("Model From Json") {
-                
                 it("Data is valid") {
                     expect(sut).toNot(beNil())
                     expect(sut?.titleVM).toNot(beNil())

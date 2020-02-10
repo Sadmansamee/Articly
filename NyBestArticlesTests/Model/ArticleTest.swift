@@ -10,15 +10,13 @@ import Nimble
 import Quick
 import RxSwift
 
-
 @testable import Articly
 
 class ArticleTest: QuickSpec {
     override func spec() {
         describe("ArticleTest") {
-            
             var sut: Article!
-            
+
             afterEach {
                 sut = nil
             }
@@ -27,9 +25,8 @@ class ArticleTest: QuickSpec {
                 let url = URL(fileURLWithPath: path!)
                 sut = try? JSONDecoder().decode(Article.self, from: Data(contentsOf: url))
             }
-            
+
             context("Model From Json") {
-                
                 it("Data is valid") {
                     expect(sut).toNot(beNil())
                     expect(sut?.title).toNot(beNil())
@@ -37,7 +34,6 @@ class ArticleTest: QuickSpec {
                     expect(sut?.smallImage).to(equal("https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-thumbStandard.jpg"))
 
                     expect(sut?.largeImage).to(equal("https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-mediumThreeByTwo440.jpg"))
-                    
                 }
             }
         }

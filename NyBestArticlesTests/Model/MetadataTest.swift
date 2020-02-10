@@ -11,15 +11,13 @@ import Nimble
 import Quick
 import RxSwift
 
-
 @testable import Articly
 
 class MetadataTest: QuickSpec {
     override func spec() {
         describe("ArticleTest") {
-            
             var sut: Metadata!
-            
+
             afterEach {
                 sut = nil
             }
@@ -28,9 +26,8 @@ class MetadataTest: QuickSpec {
                 let url = URL(fileURLWithPath: path!)
                 sut = try? JSONDecoder().decode(Metadata.self, from: Data(contentsOf: url))
             }
-            
+
             context("Model From Json") {
-                
                 it("Data is valid") {
                     expect(sut).toNot(beNil())
                     expect(sut?.url).to(equal("https://static01.nyt.com/images/2019/11/09/autossell/06op-mary-cain/06op-mary-cain-thumbStandard.jpg"))

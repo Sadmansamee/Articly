@@ -19,7 +19,7 @@ class ArticlesListServiceTest: QuickSpec {
     override func spec() {
         describe("ArticlesListServiceTest") {
             var sut: MoyaProvider<ArticlesListService>!
-          
+
             func customEndpointClosure(_ target: ArticlesListService) -> Endpoint {
                 return Endpoint(url: URL(target: target).absoluteString,
                                 sampleResponseClosure: { .networkResponse(200, target.sampleData) },
