@@ -25,7 +25,7 @@ final class AppCoordinator: BaseCoordinator {
     // MARK: - Private methods
 
     private func runHomeFlow() {
-        let coordinator = HomeCoordinator(container: container, navigationController: navigationController)
+        let coordinator = ArticleListCoordinator(container: container, navigationController: navigationController)
         coordinator.finishFlow = { [unowned self, unowned coordinator] in
             self.removeDependency(coordinator)
             self.start()

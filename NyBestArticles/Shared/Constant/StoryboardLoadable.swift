@@ -13,10 +13,10 @@ protocol StoryboardLoadable: AnyObject {
     static var storyboardName: String { get }
 }
 
-protocol HomeStoryboardLoadable: StoryboardLoadable {}
+protocol ArticleListStoryboardLoadable: StoryboardLoadable {}
 
-extension HomeStoryboardLoadable where Self: UIViewController {
+extension ArticleListStoryboardLoadable where Self: UIViewController {
     static var storyboardName: String {
-        "Home"
+        "ArticleList"
     }
 }

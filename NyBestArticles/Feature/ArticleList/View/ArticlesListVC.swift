@@ -15,7 +15,7 @@ protocol ArticlesListVCProtocol: AnyObject {
     var onArticleSelected: ((ArticleViewModel) -> Void)? { get set }
 }
 
-class ArticlesListVC: UIViewController, HomeStoryboardLoadable, ArticlesListVCProtocol {
+class ArticlesListVC: UIViewController, ArticleListStoryboardLoadable, ArticlesListVCProtocol {
     var onArticleSelected: ((ArticleViewModel) -> Void)?
 
     var articlesListViewModel: ArticlesListViewModel!

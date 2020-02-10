@@ -9,7 +9,7 @@
 import Moya
 import Swinject
 
-final class HomeCoordinator: BaseCoordinator, CoordinatorFinishOutput {
+final class ArticleListCoordinator: BaseCoordinator, CoordinatorFinishOutput {
     // MARK: - CoordinatorFinishOutput
 
     var finishFlow: (() -> Void)?

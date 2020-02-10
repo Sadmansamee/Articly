@@ -13,7 +13,7 @@ protocol ArticleDetailVCProtocol: AnyObject {
     var onBack: (() -> Void)? { get set }
 }
 
-class ArticleDetailVC: UITableViewController, HomeStoryboardLoadable, ArticleDetailVCProtocol {
+class ArticleDetailVC: UITableViewController, ArticleListStoryboardLoadable, ArticleDetailVCProtocol {
     // MARK: - ArticleDetailVCProtocol
 
     var onBack: (() -> Void)?
